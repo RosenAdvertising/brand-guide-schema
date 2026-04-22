@@ -61,6 +61,7 @@ voice_tone = brand["voice"]["tone"]
 
 | Field | Type | Description |
 |-------|------|-------------|
+| `version` | string (semver) | Brand guide version, e.g. `"1.0.0"` |
 | `taglines` | string[] | Brand taglines, priority order |
 | `services` | string[] | Products or services offered |
 | `color_mode` | `"light"` or `"dark"` | Default rendering mode |
@@ -73,7 +74,7 @@ voice_tone = brand["voice"]["tone"]
 Validate any `brand.json` against the included `schema.json`:
 
 ```bash
-npx ajv-cli validate -s schema.json -d brand.json
+npx ajv-cli validate --spec=draft2020 -s schema.json -d brand.json
 ```
 
 ## File structure

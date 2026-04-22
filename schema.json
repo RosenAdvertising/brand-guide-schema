@@ -1,5 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rosenadvertising.github.io/brand-guide-schema/v0.1/schema.json",
   "title": "Brand Guide",
   "description": "Machine-readable brand identity context for AI agents and design tooling.",
   "type": "object",
@@ -24,6 +25,11 @@
       "format": "date",
       "description": "ISO 8601 date the guide was last reviewed"
     },
+    "version": {
+      "type": "string",
+      "description": "Brand guide version (semver). Increment when the guide is meaningfully updated.",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
     "taglines": {
       "type": "array",
       "items": { "type": "string" },
@@ -36,6 +42,7 @@
     "markets": {
       "type": "array",
       "items": { "type": "string" },
+      "minItems": 1,
       "description": "Geographic or demographic markets served"
     },
     "services": {
@@ -71,6 +78,7 @@
     "logo": {
       "type": "object",
       "description": "Logo variants and descriptions",
+      "required": ["description", "has_icon_variant"],
       "properties": {
         "description": { "type": "string" },
         "has_icon_variant": { "type": "boolean" },
@@ -104,11 +112,13 @@
         "tone": {
           "type": "array",
           "items": { "type": "string" },
+          "minItems": 1,
           "description": "Adjectives describing the brand's communication style"
         },
         "avoid": {
           "type": "array",
           "items": { "type": "string" },
+          "minItems": 1,
           "description": "Tones or styles that are off-brand"
         }
       },
