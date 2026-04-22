@@ -1,5 +1,9 @@
 # Brand Guide Schema
 
+![Status](https://img.shields.io/badge/status-early%20development-orange)
+![JSON Schema](https://img.shields.io/badge/JSON%20Schema-2020--12-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+
 > **Status:** Early development. Schema and templates are functional but the format is actively evolving. Field additions and breaking changes are possible before v1.0.
 
 A lightweight, machine-readable format for brand identity — built so AI agents can reliably access and apply brand context.
