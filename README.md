@@ -64,11 +64,14 @@ audience = brand["audience"]["primary"]
 | Field | Type | Description |
 |-------|------|-------------|
 | `version` | string (semver) | Brand guide version, e.g. `"1.0.0"` |
+| `legal_name` | string | Registered entity name, if different from brand name |
+| `locale` | string | Language/region code, e.g. `"en-US"` |
 | `taglines` | string[] | Brand taglines, priority order |
 | `differentiation` | string | One sentence: what this brand is not or how it differs |
 | `audience` | object | `primary` (who the customer is), `pain_points`, `motivations` |
 | `services` | string[] | Products or services offered |
 | `restrictions` | string[] | Off-limits language or claims (important for regulated industries) |
+| `imagery_style` | string[] | Art direction for photos and visuals |
 | `accessible_pairs` | array | Approved color combinations, referencing color role names |
 | `color_mode` | `"light"` or `"dark"` | Default rendering mode |
 | `logo` | object | `description`, `has_icon_variant`, `color`, `white`, `monogram`, `wordmark`, `icon_file`, `wordmark_file` |

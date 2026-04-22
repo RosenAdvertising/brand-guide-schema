@@ -1,7 +1,9 @@
 # Brand Name — Brand Guide
 
 **Website:** yourdomain.com
+**Legal name:** Your Legal Entity Name LLC
 **Category:** Industry — Subcategory
+**Locale:** en-US
 **Last updated:** YYYY-MM-DD
 **Version:** 0.1.0
 
@@ -44,6 +46,13 @@
 Do not use:
 - Do not make specific outcome guarantees
 - Do not reference competitors by name
+
+---
+
+## Imagery Style
+
+- Real people, candid
+- Natural light, outdoor or environmental settings
 
 ---
 

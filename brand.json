@@ -1,7 +1,9 @@
 {
   "brand": "Your Brand Name",
+  "legal_name": "Your Legal Entity Name LLC",
   "website": "yourdomain.com",
   "category": "Industry — Subcategory",
+  "locale": "en-US",
   "last_updated": "2025-01-01",
   "version": "0.1.0",
   "taglines": [
@@ -30,6 +32,10 @@
   "restrictions": [
     "Do not make specific outcome guarantees",
     "Do not reference competitors by name"
+  ],
+  "imagery_style": [
+    "Real people, candid",
+    "Natural light, outdoor or environmental settings"
   ],
   "colors": {
     "primary": { "hex": "#000000", "usage": "Headlines, primary CTAs, key UI elements" },
