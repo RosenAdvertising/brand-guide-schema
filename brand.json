@@ -1,0 +1,51 @@
+{
+  "brand": "Your Brand Name",
+  "website": "yourdomain.com",
+  "category": "Industry — Subcategory",
+  "last_updated": "2025-01-01",
+  "taglines": [
+    "Primary tagline",
+    "Secondary tagline (optional)"
+  ],
+  "positioning": "One or two sentence positioning statement describing what you do and who you serve.",
+  "markets": [
+    "City, State",
+    "Region or demographic"
+  ],
+  "services": [
+    "Service or product one",
+    "Service or product two"
+  ],
+  "colors": {
+    "primary": "#000000",
+    "accent": "#ffffff",
+    "background": "#f5f5f5"
+  },
+  "color_mode": "light",
+  "typography": {
+    "headings": {
+      "stack": "\"Font Name\", sans-serif"
+    },
+    "body": {
+      "stack": "\"Font Name\", serif"
+    }
+  },
+  "logo": {
+    "description": "Brief description of logo mark and wordmark",
+    "has_icon_variant": false,
+    "color": "logo-color.png",
+    "white": "logo-white.png"
+  },
+  "contact": {
+    "email": "hello@yourdomain.com",
+    "phone": "+1 000 000 0000"
+  },
+  "social": {
+    "twitter": "@handle",
+    "linkedin": "linkedin.com/company/yourcompany"
+  },
+  "voice": {
+    "tone": ["adjective", "adjective", "adjective"],
+    "avoid": ["adjective", "adjective"]
+  }
+}

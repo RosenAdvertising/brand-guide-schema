@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Brand Guide",
+  "description": "Machine-readable brand identity context for AI agents and design tooling.",
+  "type": "object",
+  "required": ["brand", "website", "category", "last_updated", "positioning", "markets", "colors", "typography", "voice"],
+  "additionalProperties": false,
+  "properties": {
+    "brand": {
+      "type": "string",
+      "description": "Full brand name"
+    },
+    "website": {
+      "type": "string",
+      "description": "Primary domain (no protocol)",
+      "pattern": "^(?!https?://).+"
+    },
+    "category": {
+      "type": "string",
+      "description": "Industry and subcategory descriptor, e.g. 'Legal — Family Law' or 'SaaS — Project Management'"
+    },
+    "last_updated": {
+      "type": "string",
+      "format": "date",
+      "description": "ISO 8601 date the guide was last reviewed"
+    },
+    "taglines": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "One or more brand taglines, in priority order"
+    },
+    "positioning": {
+      "type": "string",
+      "description": "One or two sentence positioning statement"
+    },
+    "markets": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Geographic or demographic markets served"
+    },
+    "services": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Products or services offered"
+    },
+    "colors": {
+      "type": "object",
+      "description": "Named color roles mapped to hex values",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^#([0-9A-Fa-f]{3,4}|[0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$"
+      }
+    },
+    "color_mode": {
+      "type": "string",
+      "enum": ["light", "dark"],
+      "description": "Default rendering mode when relevant"
+    },
+    "typography": {
+      "type": "object",
+      "description": "Named type roles (headings, body, display, etc.) with CSS font stack",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["stack"],
+        "properties": {
+          "stack": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "logo": {
+      "type": "object",
+      "description": "Logo variants and descriptions",
+      "properties": {
+        "description": { "type": "string" },
+        "has_icon_variant": { "type": "boolean" },
+        "color": { "type": "string", "description": "Filename of full-color logo asset" },
+        "white": { "type": "string", "description": "Filename of white/reversed logo asset" },
+        "monogram": { "type": "string", "description": "Monogram character(s) used in compact contexts" },
+        "wordmark": { "type": "string", "description": "Brand name as it appears in the wordmark (text)" },
+        "icon_file": { "type": "string", "description": "Filename of standalone icon/mark asset" },
+        "wordmark_file": { "type": "string", "description": "Filename of wordmark-only logo asset" }
+      },
+      "additionalProperties": false
+    },
+    "contact": {
+      "type": "object",
+      "properties": {
+        "email": { "type": "string", "format": "email" },
+        "phone": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "social": {
+      "type": "object",
+      "description": "Social handles or profile URLs, keyed by platform",
+      "additionalProperties": { "type": "string" }
+    },
+    "voice": {
+      "type": "object",
+      "required": ["tone", "avoid"],
+      "description": "Brand voice guidance for copy and content",
+      "properties": {
+        "tone": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Adjectives describing the brand's communication style"
+        },
+        "avoid": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Tones or styles that are off-brand"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
