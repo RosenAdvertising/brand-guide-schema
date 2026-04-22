@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://rosenadvertising.github.io/brand-guide-schema/v0.1/schema.json",
+  "$id": "https://raw.githubusercontent.com/RosenAdvertising/brand-guide-schema/main/schema.json",
   "title": "Brand Guide",
   "description": "Machine-readable brand identity context for AI agents and design tooling.",
   "type": "object",
