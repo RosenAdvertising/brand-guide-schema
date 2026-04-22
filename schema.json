@@ -45,8 +45,16 @@
       "description": "One or more brand taglines, in priority order"
     },
     "positioning": {
-      "type": "string",
-      "description": "One or two sentence positioning statement"
+      "type": "object",
+      "description": "Brand positioning — structured components and final statement",
+      "required": ["statement"],
+      "properties": {
+        "statement": { "type": "string", "description": "Final one or two sentence positioning statement" },
+        "for": { "type": "string", "description": "Target audience (e.g. 'small law firms in the Southeast')" },
+        "category": { "type": "string", "description": "Category the brand competes in" },
+        "benefit": { "type": "string", "description": "Primary benefit or value delivered" }
+      },
+      "additionalProperties": false
     },
     "differentiation": {
       "type": "string",
@@ -94,7 +102,28 @@
     },
     "colors": {
       "type": "object",
-      "description": "Named color roles with hex values and usage guidance",
+      "description": "Named color roles with hex values and usage guidance. primary and background are required.",
+      "required": ["primary", "background"],
+      "properties": {
+        "primary": {
+          "type": "object",
+          "required": ["hex"],
+          "properties": {
+            "hex": { "type": "string", "pattern": "^#([0-9A-Fa-f]{3,4}|[0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$" },
+            "usage": { "type": "string" }
+          },
+          "additionalProperties": false
+        },
+        "background": {
+          "type": "object",
+          "required": ["hex"],
+          "properties": {
+            "hex": { "type": "string", "pattern": "^#([0-9A-Fa-f]{3,4}|[0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$" },
+            "usage": { "type": "string" }
+          },
+          "additionalProperties": false
+        }
+      },
       "additionalProperties": {
         "type": "object",
         "required": ["hex"],
@@ -151,6 +180,11 @@
       "required": ["description", "has_icon_variant"],
       "properties": {
         "description": { "type": "string" },
+        "logo_style": {
+          "type": "string",
+          "enum": ["wordmark", "lettermark", "pictorial", "abstract", "combination"],
+          "description": "Structural type of the logo mark"
+        },
         "has_icon_variant": { "type": "boolean" },
         "color": { "type": "string", "description": "Filename of full-color logo asset" },
         "white": { "type": "string", "description": "Filename of white/reversed logo asset" },
@@ -165,7 +199,7 @@
       "type": "object",
       "properties": {
         "email": { "type": "string", "format": "email" },
-        "phone": { "type": "string" }
+        "telephone": { "type": "string" }
       },
       "additionalProperties": false
     },

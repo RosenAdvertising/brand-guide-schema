@@ -10,7 +10,12 @@
     "Primary tagline",
     "Secondary tagline (optional)"
   ],
-  "positioning": "One or two sentence positioning statement describing what you do and who you serve.",
+  "positioning": {
+    "statement": "One or two sentence positioning statement describing what you do and who you serve.",
+    "for": "Target audience description",
+    "category": "Category you compete in",
+    "benefit": "Primary benefit or value delivered"
+  },
   "differentiation": "Unlike [alternative], we [key differentiator].",
   "markets": [
     "City, State",
@@ -63,13 +68,14 @@
   },
   "logo": {
     "description": "Brief description of logo mark and wordmark",
+    "logo_style": "combination",
     "has_icon_variant": false,
     "color": "logo-color.png",
     "white": "logo-white.png"
   },
   "contact": {
     "email": "hello@yourdomain.com",
-    "phone": "+1 000 000 0000"
+    "telephone": "+1 000 000 0000"
   },
   "social": {
     "twitter": "@handle",

@@ -18,6 +18,9 @@
 - "Secondary tagline (optional)"
 
 **Positioning:** One or two sentence positioning statement describing what you do and who you serve.
+**For:** Target audience description
+**Category:** Category you compete in
+**Benefit:** Primary benefit or value delivered
 
 **Differentiation:** Unlike [alternative], we [key differentiator].
 
@@ -82,6 +85,7 @@ Do not use:
 ## Logo
 
 **Description:** Brief description of logo mark and wordmark.
+**Logo style:** combination
 **Has icon variant:** false
 **Wordmark:** Brand Name (text as it appears in the logo)
 **Color file:** logo-color.png
@@ -107,7 +111,7 @@ Do not use:
 ## Contact
 
 **Email:** hello@yourdomain.com
-**Phone:** +1 000 000 0000
+**Telephone:** +1 000 000 0000
 
 ---
 
