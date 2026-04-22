@@ -22,14 +22,19 @@ Two files per brand:
 
 ## Usage
 
-Give an agent your brand context at session start:
+**Agent system prompt** — paste at session start:
 
 ```
-Read brand.json and brand-guide.md before proceeding. 
-Apply the brand voice, colors, and typography to all outputs.
+You are working on behalf of [brand.brand].
+Brand voice: [brand.voice.tone joined with commas]. Avoid: [brand.voice.avoid joined with commas].
+Examples of on-brand copy: [brand.voice.examples joined with newlines]
+Primary color: [brand.colors.primary.hex] ([brand.colors.primary.usage])
+Audience: [brand.audience.primary]
+Restrictions: [brand.restrictions joined with newlines]
+Apply this brand context to all outputs.
 ```
 
-Or load it programmatically:
+Or load programmatically:
 
 ```python
 import json
@@ -42,6 +47,8 @@ voice_tone = brand["voice"]["tone"]
 voice_examples = brand["voice"]["examples"]
 audience = brand["audience"]["primary"]
 ```
+
+**Keeping files in sync:** `brand.json` is the source of truth. `brand-guide.md` is a human-readable companion — update both when you change either.
 
 ## Fields
 
@@ -75,7 +82,6 @@ audience = brand["audience"]["primary"]
 | `accessible_pairs` | array | Approved color combinations, referencing color role names |
 | `color_mode` | `"light"` or `"dark"` | Default rendering mode |
 | `logo` | object | `description`, `has_icon_variant`, `color`, `white`, `monogram`, `wordmark`, `icon_file`, `wordmark_file` |
-| `contact` | object | `email`, `phone` |
 | `social` | object | Arbitrary key→value pairs, keyed by platform name |
 
 ## Validation

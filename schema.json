@@ -195,14 +195,6 @@
       },
       "additionalProperties": false
     },
-    "contact": {
-      "type": "object",
-      "properties": {
-        "email": { "type": "string", "format": "email" },
-        "telephone": { "type": "string" }
-      },
-      "additionalProperties": false
-    },
     "social": {
       "type": "object",
       "description": "Social handles or profile URLs, keyed by platform",

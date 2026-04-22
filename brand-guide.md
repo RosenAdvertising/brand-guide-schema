@@ -108,13 +108,6 @@ Do not use:
 
 ---
 
-## Contact
-
-**Email:** hello@yourdomain.com
-**Telephone:** +1 000 000 0000
-
----
-
 ## Social
 
 **Twitter/X:** @handle

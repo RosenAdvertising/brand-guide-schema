@@ -73,10 +73,6 @@
     "color": "logo-color.png",
     "white": "logo-white.png"
   },
-  "contact": {
-    "email": "hello@yourdomain.com",
-    "telephone": "+1 000 000 0000"
-  },
   "social": {
     "twitter": "@handle",
     "linkedin": "linkedin.com/company/yourcompany"
