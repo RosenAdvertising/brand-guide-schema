@@ -39,23 +39,76 @@
       "type": "string",
       "description": "One or two sentence positioning statement"
     },
+    "differentiation": {
+      "type": "string",
+      "description": "One sentence: what this brand explicitly is not, or how it differs from alternatives"
+    },
     "markets": {
       "type": "array",
       "items": { "type": "string" },
       "minItems": 1,
       "description": "Geographic or demographic markets served"
     },
+    "audience": {
+      "type": "object",
+      "description": "Who the brand is speaking to — for copy and content agents",
+      "required": ["primary"],
+      "properties": {
+        "primary": { "type": "string", "description": "One sentence: who the ideal customer is" },
+        "pain_points": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "What the audience is trying to solve or escape"
+        },
+        "motivations": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "What the audience is trying to achieve or become"
+        }
+      },
+      "additionalProperties": false
+    },
     "services": {
       "type": "array",
       "items": { "type": "string" },
       "description": "Products or services offered"
     },
+    "restrictions": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Off-limits language, claims, or topics. Essential for regulated industries."
+    },
     "colors": {
       "type": "object",
-      "description": "Named color roles mapped to hex values",
+      "description": "Named color roles with hex values and usage guidance",
       "additionalProperties": {
-        "type": "string",
-        "pattern": "^#([0-9A-Fa-f]{3,4}|[0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$"
+        "type": "object",
+        "required": ["hex"],
+        "properties": {
+          "hex": {
+            "type": "string",
+            "pattern": "^#([0-9A-Fa-f]{3,4}|[0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$",
+            "description": "Hex color value"
+          },
+          "usage": {
+            "type": "string",
+            "description": "Where and how this color is used"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "accessible_pairs": {
+      "type": "array",
+      "description": "Approved accessible color combinations (references color role names)",
+      "items": {
+        "type": "object",
+        "required": ["text", "bg"],
+        "properties": {
+          "text": { "type": "string", "description": "Color role name for text" },
+          "bg": { "type": "string", "description": "Color role name for background" }
+        },
+        "additionalProperties": false
       }
     },
     "color_mode": {
@@ -65,12 +118,15 @@
     },
     "typography": {
       "type": "object",
-      "description": "Named type roles (headings, body, display, etc.) with CSS font stack",
+      "description": "Named type roles (headings, body, display, etc.) with CSS font stack and optional type tokens",
       "additionalProperties": {
         "type": "object",
         "required": ["stack"],
         "properties": {
-          "stack": { "type": "string" }
+          "stack": { "type": "string", "description": "CSS font stack" },
+          "weight": { "type": "integer", "description": "Font weight, e.g. 400, 700" },
+          "size": { "type": "string", "description": "Base font size, e.g. '1rem', '16px'" },
+          "line_height": { "type": "string", "description": "Line height, e.g. '1.5', '24px'" }
         },
         "additionalProperties": false
       }
@@ -120,6 +176,12 @@
           "items": { "type": "string" },
           "minItems": 1,
           "description": "Tones or styles that are off-brand"
+        },
+        "examples": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1,
+          "description": "Sample on-brand sentences that demonstrate the voice in practice"
         }
       },
       "additionalProperties": false

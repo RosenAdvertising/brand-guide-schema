@@ -37,8 +37,10 @@ import json
 with open("brand.json") as f:
     brand = json.load(f)
 
-primary_color = brand["colors"]["primary"]
+primary_color = brand["colors"]["primary"]["hex"]
 voice_tone = brand["voice"]["tone"]
+voice_examples = brand["voice"]["examples"]
+audience = brand["audience"]["primary"]
 ```
 
 ## Fields
@@ -53,9 +55,9 @@ voice_tone = brand["voice"]["tone"]
 | `last_updated` | string (date) | ISO 8601 date last reviewed |
 | `positioning` | string | One or two sentence positioning statement |
 | `markets` | string[] | Geographic or demographic markets served |
-| `colors` | object | Named color roles mapped to hex values |
-| `typography` | object | Named type roles with CSS `stack` |
-| `voice` | object | `tone` (adjectives) and `avoid` (off-brand styles) |
+| `colors` | object | Named color roles — each with `hex` and optional `usage` note |
+| `typography` | object | Named type roles with CSS `stack` and optional `weight`, `size`, `line_height` |
+| `voice` | object | `tone`, `avoid`, and optional `examples` (sample on-brand sentences) |
 
 ### Optional
 
@@ -63,7 +65,11 @@ voice_tone = brand["voice"]["tone"]
 |-------|------|-------------|
 | `version` | string (semver) | Brand guide version, e.g. `"1.0.0"` |
 | `taglines` | string[] | Brand taglines, priority order |
+| `differentiation` | string | One sentence: what this brand is not or how it differs |
+| `audience` | object | `primary` (who the customer is), `pain_points`, `motivations` |
 | `services` | string[] | Products or services offered |
+| `restrictions` | string[] | Off-limits language or claims (important for regulated industries) |
+| `accessible_pairs` | array | Approved color combinations, referencing color role names |
 | `color_mode` | `"light"` or `"dark"` | Default rendering mode |
 | `logo` | object | `description`, `has_icon_variant`, `color`, `white`, `monogram`, `wordmark`, `icon_file`, `wordmark_file` |
 | `contact` | object | `email`, `phone` |

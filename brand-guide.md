@@ -3,6 +3,7 @@
 **Website:** yourdomain.com
 **Category:** Industry — Subcategory
 **Last updated:** YYYY-MM-DD
+**Version:** 0.1.0
 
 ---
 
@@ -16,6 +17,8 @@
 
 **Positioning:** One or two sentence positioning statement describing what you do and who you serve.
 
+**Differentiation:** Unlike [alternative], we [key differentiator].
+
 **Markets:** City, State; Region or demographic
 
 **Services:**
@@ -24,24 +27,46 @@
 
 ---
 
+## Audience
+
+**Primary:** One sentence describing who the ideal customer is.
+
+**Pain points:**
+- What they are trying to solve or escape
+
+**Motivations:**
+- What they are trying to achieve or become
+
+---
+
+## Restrictions
+
+Do not use:
+- Do not make specific outcome guarantees
+- Do not reference competitors by name
+
+---
+
 ## Colors
 
 **Color mode:** light
 
-| Role | Hex | Notes |
+| Role | Hex | Usage |
 |------|-----|-------|
-| Primary | `#000000` | Main brand color |
-| Accent | `#ffffff` | CTA, highlights |
-| Background | `#f5f5f5` | Page background |
+| Primary | `#000000` | Headlines, primary CTAs, key UI elements |
+| Accent | `#ffffff` | CTA backgrounds, highlights, contrast elements |
+| Background | `#f5f5f5` | Page and section backgrounds |
+
+**Accessible pairs:** accent on primary, primary on background
 
 ---
 
 ## Typography
 
-| Role | Stack |
-|------|-------|
-| Headings | `"Font Name", sans-serif` |
-| Body | `"Font Name", serif` |
+| Role | Stack | Weight | Size | Line Height |
+|------|-------|--------|------|-------------|
+| Headings | `"Font Name", sans-serif` | 700 | 2rem | 1.2 |
+| Body | `"Font Name", serif` | 400 | 1rem | 1.6 |
 
 ---
 
@@ -63,6 +88,10 @@
 **Tone:** adjective, adjective, adjective
 
 **Avoid:** adjective, adjective
+
+**Examples:**
+- "Sample sentence that exemplifies the brand voice."
+- "Another example showing how the brand speaks to its audience."
 
 ---
 

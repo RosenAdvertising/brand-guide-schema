@@ -9,26 +9,50 @@
     "Secondary tagline (optional)"
   ],
   "positioning": "One or two sentence positioning statement describing what you do and who you serve.",
+  "differentiation": "Unlike [alternative], we [key differentiator].",
   "markets": [
     "City, State",
     "Region or demographic"
   ],
+  "audience": {
+    "primary": "One sentence describing who the ideal customer is.",
+    "pain_points": [
+      "What they are trying to solve or escape"
+    ],
+    "motivations": [
+      "What they are trying to achieve or become"
+    ]
+  },
   "services": [
     "Service or product one",
     "Service or product two"
   ],
+  "restrictions": [
+    "Do not make specific outcome guarantees",
+    "Do not reference competitors by name"
+  ],
   "colors": {
-    "primary": "#000000",
-    "accent": "#ffffff",
-    "background": "#f5f5f5"
+    "primary": { "hex": "#000000", "usage": "Headlines, primary CTAs, key UI elements" },
+    "accent": { "hex": "#ffffff", "usage": "CTA backgrounds, highlights, contrast elements" },
+    "background": { "hex": "#f5f5f5", "usage": "Page and section backgrounds" }
   },
+  "accessible_pairs": [
+    { "text": "accent", "bg": "primary" },
+    { "text": "primary", "bg": "background" }
+  ],
   "color_mode": "light",
   "typography": {
     "headings": {
-      "stack": "\"Font Name\", sans-serif"
+      "stack": "\"Font Name\", sans-serif",
+      "weight": 700,
+      "size": "2rem",
+      "line_height": "1.2"
     },
     "body": {
-      "stack": "\"Font Name\", serif"
+      "stack": "\"Font Name\", serif",
+      "weight": 400,
+      "size": "1rem",
+      "line_height": "1.6"
     }
   },
   "logo": {
@@ -47,6 +71,10 @@
   },
   "voice": {
     "tone": ["adjective", "adjective", "adjective"],
-    "avoid": ["adjective", "adjective"]
+    "avoid": ["adjective", "adjective"],
+    "examples": [
+      "Sample sentence that exemplifies the brand voice.",
+      "Another example showing how the brand speaks to its audience."
+    ]
   }
 }
