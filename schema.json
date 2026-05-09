@@ -13,8 +13,8 @@
     },
     "website": {
       "type": "string",
-      "description": "Primary domain (no protocol)",
-      "pattern": "^(?!https?://).+"
+      "description": "Primary domain (no protocol, no path, no query string — e.g. 'example.com')",
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9.-]*\\.[a-zA-Z]{2,}$"
     },
     "category": {
       "type": "string",
@@ -143,13 +143,13 @@
     },
     "accessible_pairs": {
       "type": "array",
-      "description": "Approved accessible color combinations (references color role names)",
+      "description": "Approved accessible color combinations. Values must match color role names defined in `colors`. Schema cannot cross-validate role existence — validate role names manually or in tooling.",
       "items": {
         "type": "object",
         "required": ["text", "bg"],
         "properties": {
-          "text": { "type": "string", "description": "Color role name for text" },
-          "bg": { "type": "string", "description": "Color role name for background" }
+          "text": { "type": "string", "description": "Color role name from `colors` (e.g. 'primary', 'background')" },
+          "bg": { "type": "string", "description": "Color role name from `colors` (e.g. 'primary', 'background')" }
         },
         "additionalProperties": false
       }
@@ -162,6 +162,7 @@
     "typography": {
       "type": "object",
       "description": "Named type roles (headings, body, display, etc.) with CSS font stack and optional type tokens",
+      "minProperties": 1,
       "additionalProperties": {
         "type": "object",
         "required": ["stack"],
