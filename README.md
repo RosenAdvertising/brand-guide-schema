@@ -34,6 +34,8 @@ Restrictions: [brand.restrictions joined with newlines]
 Apply this brand context to all outputs.
 ```
 
+> **Note:** `voice.examples`, `audience`, and `restrictions` are optional fields. Guard against missing keys before interpolating — a schema-valid `brand.json` may not include them.
+
 Or load programmatically:
 
 ```python
@@ -60,7 +62,7 @@ audience = brand["audience"]["primary"]
 | `website` | string | Primary domain (no protocol) |
 | `category` | string | Industry and subcategory, e.g. `"Legal — Family Law"` |
 | `last_updated` | string (date) | ISO 8601 date last reviewed |
-| `positioning` | string | One or two sentence positioning statement |
+| `positioning` | object | `{ "statement": "..." }` — required. Optional sub-fields: `for`, `category`, `benefit` |
 | `markets` | string[] | Geographic or demographic markets served |
 | `colors` | object | Named color roles — each with `hex` and optional `usage` note |
 | `typography` | object | Named type roles with CSS `stack` and optional `weight`, `size`, `line_height` |
